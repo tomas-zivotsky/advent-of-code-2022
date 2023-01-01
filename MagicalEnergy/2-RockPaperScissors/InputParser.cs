@@ -1,11 +1,19 @@
-﻿namespace _2_RockPaperScissors;
+﻿using Utils.Helpers;
+
+namespace _2_RockPaperScissors;
 
 public class InputParser
 {
-    public IEnumerable<(Choice,Response)> Parse(string path)
+    private readonly FileHelper _fileHelper;
+
+    public InputParser(FileHelper fileHelper)
     {
-        if (path is null) throw new ArgumentNullException(nameof(path));
-        if (!File.Exists(path)) throw new ArgumentException($"File {path} not found.");
+        _fileHelper = fileHelper;
+    }
+
+    public IEnumerable<(TItem1, TItem2)> Parse<TItem1, TItem2>(string path)
+    {
+        _fileHelper.ValidatePath(path);
 
         foreach (var line in File.ReadLines(path))
         {
@@ -14,13 +22,13 @@ public class InputParser
             ReadOnlySpan<char> choiceInput = line.AsSpan(0, 1);
             ReadOnlySpan<char> responseInput = line.AsSpan(2, 1);
 
-            var choice = ParseEnumInput<Choice>(choiceInput);
-            var response = ParseEnumInput<Response>(responseInput);
+            var item1 = ParseEnumInput<TItem1>(choiceInput);
+            var item2 = ParseEnumInput<TItem2>(responseInput);
 
-            yield return (choice, response);
+            yield return (item1, item2);
         }
     }
-
+    
     private static T ParseEnumInput<T>(ReadOnlySpan<char> input)
     {
         Enum.TryParse(typeof(T), input, true, out var result);

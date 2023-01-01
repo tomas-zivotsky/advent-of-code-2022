@@ -1,6 +1,7 @@
 ﻿using _1_CalorieCounting;
 using Microsoft.Extensions.Configuration;
 using Utils.Extensions;
+using Utils.Helpers;
 
 var builder = new ConfigurationBuilder()
     .AddJsonFile("appsettings.json", true, true);
@@ -11,7 +12,9 @@ var path = args.Length >= 1
     ? args.First()
     : config["Input:DefaultPath"] ?? throw new ArgumentException("Default path not found.");
 
-var parser = new InputParser();
+var fileHelper = new FileHelper();
+
+var parser = new InputParser(fileHelper);
 var inventories = parser.Parse(path);
 
 var sorted = inventories.OrderByDescending(inventory => inventory.Food.TotalCalories);

@@ -1,13 +1,20 @@
 ﻿using Utils.Extensions;
+using Utils.Helpers;
 
 namespace _1_CalorieCounting;
 
 public class InputParser
 {
+    private readonly FileHelper _fileHelper;
+
+    public InputParser(FileHelper fileHelper)
+    {
+        _fileHelper = fileHelper;
+    }
+
     public IEnumerable<Inventory> Parse(string path)
     {
-        if (path is null) throw new ArgumentNullException(nameof(path));
-        if (!File.Exists(path)) throw new ArgumentException($"File {path} not found.");
+        _fileHelper.ValidatePath(path);
 
         Inventory? current = null;
 
