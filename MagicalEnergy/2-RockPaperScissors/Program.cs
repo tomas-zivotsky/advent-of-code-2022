@@ -13,7 +13,14 @@ var path = args.Length >= 1
 var parser = new InputParser();
 var guide = parser.Parse(path);
 
-var item = guide.First();
+var evaluator = new Evaluator();
+int totalScore = 0;
 
-Console.WriteLine($"{item.Item1}-{item.Item2}");
+foreach ((Choice choice, Response response) in guide)
+{
+    totalScore += evaluator.Evaluate(choice, response);
+}
+
+Console.WriteLine($"Total score is: {totalScore}.");
+
 Console.ReadKey();
