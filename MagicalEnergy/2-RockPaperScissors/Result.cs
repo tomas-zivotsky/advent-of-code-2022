@@ -1,6 +1,6 @@
 ﻿namespace _2_RockPaperScissors;
 
-public enum Result
+internal enum Result
 {
     Loss = 0,
     Draw = 3,

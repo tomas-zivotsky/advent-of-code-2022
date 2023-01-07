@@ -3,13 +3,13 @@ using Utils.Helpers;
 
 namespace _1_CalorieCounting;
 
-public class InputParser
+internal class InputParser
 {
     private readonly FileHelper _fileHelper;
 
     public InputParser(FileHelper fileHelper)
     {
-        _fileHelper = fileHelper;
+        _fileHelper = fileHelper ?? throw new ArgumentNullException(nameof(fileHelper));
     }
 
     public IEnumerable<Inventory> Parse(string path)
