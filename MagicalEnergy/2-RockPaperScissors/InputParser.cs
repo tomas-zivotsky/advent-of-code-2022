@@ -2,13 +2,13 @@
 
 namespace _2_RockPaperScissors;
 
-public class InputParser
+internal class InputParser
 {
     private readonly FileHelper _fileHelper;
 
     public InputParser(FileHelper fileHelper)
     {
-        _fileHelper = fileHelper;
+        _fileHelper = fileHelper ?? throw new ArgumentNullException(nameof(fileHelper));
     }
 
     public IEnumerable<(TItem1, TItem2)> Parse<TItem1, TItem2>(string path)

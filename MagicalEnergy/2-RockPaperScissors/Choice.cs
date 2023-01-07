@@ -1,6 +1,6 @@
 ﻿namespace _2_RockPaperScissors;
 
-public enum Choice
+internal enum Choice
 {
     A = 1,
     B = 2,

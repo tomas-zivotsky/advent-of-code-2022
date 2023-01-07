@@ -1,6 +1,6 @@
 ﻿namespace _2_RockPaperScissors;
 
-public class Evaluator
+internal class Evaluator
 {
     public int Evaluate(Choice choice, Response response)
     {

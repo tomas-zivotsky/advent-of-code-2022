@@ -1,6 +1,6 @@
 ﻿namespace _2_RockPaperScissors;
 
-public enum Response
+internal enum Response
 {
     X = 1,
     Y = 2,

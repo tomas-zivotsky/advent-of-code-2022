@@ -1,6 +1,6 @@
 ﻿namespace _1_CalorieCounting;
 
-public class Food
+internal class Food
 {
     public Food(int calories)
     {

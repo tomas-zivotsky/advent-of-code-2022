@@ -1,6 +1,6 @@
 ﻿namespace _1_CalorieCounting;
 
-public class Inventory
+internal class Inventory
 {
     public FoodList Food { get; } = new();
 }
