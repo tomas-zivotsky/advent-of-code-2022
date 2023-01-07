@@ -16,21 +16,24 @@ var fileHelper = new FileHelper();
 
 var parser = new InputParser(fileHelper, config);
 
-IEnumerable<AssignmentPair> pairs = parser.Parse(path);
+IEnumerable<AssignmentPair> pairs = parser.Parse(path).ToArray();
 
 int coveredCount = 0;
-
+int overlappingCount = 0;
 foreach (AssignmentPair pair in pairs)
 {
     var result = (BitArray) pair.AssignedCamps1.Clone();
 
     result.And(pair.AssignedCamps2);
 
-    bool match = result.AreEqual(pair.AssignedCamps1) || result.AreEqual(pair.AssignedCamps2);
+    bool overlapped = result.OfType<bool>().Any(value => value);
+    if (overlapped) overlappingCount++;
 
-    if (match) coveredCount++;
+    bool covered = overlapped && (result.AreEqual(pair.AssignedCamps1) || result.AreEqual(pair.AssignedCamps2));
+    if (covered) coveredCount++;
 }
 
 Console.WriteLine($"Number of pairs that does one range fully contain the other is: {coveredCount}.");
+Console.WriteLine($"Number of pairs that do the range overlap is: {overlappingCount}.");
 
 Console.ReadKey();
