@@ -6,13 +6,15 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Utils", "Utils\Utils.csproj
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "1-CalorieCounting", "1-CalorieCounting\1-CalorieCounting.csproj", "{F1BBEB14-8C09-47DE-942C-02B615D87A17}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "2-RockPaperScissors", "2-RockPaperScissors\2-RockPaperScissors.csproj", "{828F2A50-BB41-4FC6-8169-6B0E57E3CAE1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "2-RockPaperScissors", "2-RockPaperScissors\2-RockPaperScissors.csproj", "{828F2A50-BB41-4FC6-8169-6B0E57E3CAE1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "3-Rucksacks", "3-Rucksacks\3-Rucksacks.csproj", "{B0C3D7F9-3F8B-4B59-B76A-F18CE4EE5428}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "3-Rucksacks", "3-Rucksacks\3-Rucksacks.csproj", "{B0C3D7F9-3F8B-4B59-B76A-F18CE4EE5428}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{CCCCCEE6-8A89-406E-8F63-12E82D9C1DB6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "3-Rucksacks.Tests", "Tests\3-Rucksacks.Tests\3-Rucksacks.Tests.csproj", "{23EDCB81-3EBE-4832-B6B9-ECEE3DC0A929}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "3-Rucksacks.Tests", "Tests\3-Rucksacks.Tests\3-Rucksacks.Tests.csproj", "{23EDCB81-3EBE-4832-B6B9-ECEE3DC0A929}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "4-CampCleanup", "4-CampCleanup\4-CampCleanup.csproj", "{A825CE0B-B669-4B8B-8627-6042D2C6725A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -40,6 +42,10 @@ Global
 		{23EDCB81-3EBE-4832-B6B9-ECEE3DC0A929}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{23EDCB81-3EBE-4832-B6B9-ECEE3DC0A929}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{23EDCB81-3EBE-4832-B6B9-ECEE3DC0A929}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A825CE0B-B669-4B8B-8627-6042D2C6725A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A825CE0B-B669-4B8B-8627-6042D2C6725A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A825CE0B-B669-4B8B-8627-6042D2C6725A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A825CE0B-B669-4B8B-8627-6042D2C6725A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
