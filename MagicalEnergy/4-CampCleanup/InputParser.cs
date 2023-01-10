@@ -20,7 +20,6 @@ public class InputParser
     {
         _fileHelper.ValidatePath(path);
 
-
         foreach (var line in File.ReadLines(path))
         {
             string[] sections = line.Split(',');
