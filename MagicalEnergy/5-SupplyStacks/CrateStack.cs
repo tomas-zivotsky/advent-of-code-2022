@@ -14,9 +14,9 @@ internal class CrateStack : LinkedList<Crate>
         return result;
     }
 
-    public void AddFirst(IEnumerable<Crate> items)
+    public void AddFirst(IEnumerable<Crate> items, bool reversed = false)
     {
-        foreach (var item in items)
+        foreach (var item in reversed ? items.Reverse() : items)
         {
             AddFirst(item);
         }
