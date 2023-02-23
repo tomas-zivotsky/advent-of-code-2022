@@ -1,5 +1,4 @@
-﻿using Microsoft.Extensions.Configuration;
-using Utils.Helpers;
+﻿using Utils.Helpers;
 
 namespace _6_TuningTrouble;
 
@@ -7,10 +6,9 @@ public class InputParser
 {
     private readonly FileHelper _fileHelper;
 
-    public InputParser(FileHelper fileHelper, IConfiguration configuration)
+    public InputParser(FileHelper fileHelper)
     {
         _fileHelper = fileHelper ?? throw new ArgumentNullException(nameof(fileHelper));
-        var configuration1 = configuration ?? throw new ArgumentNullException(nameof(configuration));
     }
 
     public IEnumerable<char> Parse(string path)
