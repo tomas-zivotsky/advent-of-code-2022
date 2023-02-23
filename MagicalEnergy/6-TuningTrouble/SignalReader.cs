@@ -12,9 +12,9 @@ internal class SignalReader
     }
 
 
-    public int FindOffset(int sequenceCount)
+    public int FindOffset(int sequenceLength)
     {
-        var queue = new LimitedQueue<char>(sequenceCount);
+        var queue = new LimitedQueue<char>(sequenceLength);
 
         int index = 0;
         foreach (char signal in _signals)
